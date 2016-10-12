@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Users</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" >
+    </head>
+    <body>
+        <center>
+            <h3>Welcome, @ViewBag.name!</h3>
+            <a href='/'><button class="button-primary">Go Back</button></a>
+            <hr>
+            @{
+                foreach(var Current in ViewBag.users)
+                {
+                    <p>@Current.first_name @Current.last_name</p>
+                    <p>@Current.email</p>
+                    <p>@Current.created_at</p>
+                <hr>
+                }
+            }
+        </center>
+    </body>
+</html>
